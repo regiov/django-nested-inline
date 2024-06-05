@@ -386,17 +386,18 @@ class NestedInline(InlineInstancesMixin, InlineModelAdmin):
     @property
     def media(self):
         extra = '' if settings.DEBUG else '.min'
-        if VERSION[:2] >= (2, 2):
-            js = [
-                'vendor/select2/select2.full.js',
-                'vendor/jquery/jquery%s.js' % extra,
-            ]
-        elif VERSION[:2] >= (2, 0):
-            js = [
-                'vendor/jquery/jquery%s.js' % extra,
-                'vendor/select2/select2.full.js',
-            ]
-        elif VERSION[:2] >= (1, 9):
+        #if VERSION[:2] >= (2, 2):
+        #    js = [
+        #        'vendor/select2/select2.full.js',
+        #        'vendor/jquery/jquery%s.js' % extra,
+        #    ]
+        #elif VERSION[:2] >= (2, 0):
+        #    js = [
+        #        'vendor/jquery/jquery%s.js' % extra,
+        #        'vendor/select2/select2.full.js',
+        #    ]
+        #elif VERSION[:2] >= (1, 9):
+        if VERSION[:2] >= (1, 9):
             js = [
                 'vendor/jquery/jquery%s.js' % extra,
             ]
